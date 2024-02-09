@@ -1,0 +1,21 @@
+*{
+   margin: 8px;
+}
+
+
+.main{
+ display: flex;
+}
+.all{
+    background-color: #87CEFA;
+}
+button{
+   border: 200px;
+   border-radius: 150px;
+}
+button:hover{
+            background-color: #00FF7F;
+            border: 200px;
+            border: #00FF7F;
+            cursor: pointer;
+}

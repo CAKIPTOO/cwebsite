@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="UTF-8">
+    <title>JavaScript Tutorial</title>
+    <meta name="Description" content="Cold Email Copywriting">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    
+  </head>
+  
+  <body>
+  
+   
+ <nav>
+  <input type="checkbox" id="check">
+  <label for="check" class="checkbtn"><i class="fa fa-bars"></i></label>
+  
+  <label class= "logo">Chemistry lab</label>
+  <ul>
+    <li><a href= "Services.html">Services</a></li>
+    <li><a href= "Expect.html">What to expect</a></li>
+    <li><a href= "About.html">About Us</a></li>
+    <li><a href= "Contact.html">Contact Us</a></li>
+  </ul>
+ </nav>
+    <div class="main">
+     <p>Need an answer to your Chemistry question?</p>
+     
+     
+     <div class="container">
+      
+      <form onsubmit="sendEmail(); reset(); return false;">
+        <h1>Submit your question below</h1>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Chemistry Subdiscipline">
+        <textarea placeholder="">Message</textarea>
+        <button type="submit">Submit</button>
+      </form>
+     </div>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendEmail(){
+           Email.send({
+                 Host : "smtp.elasticemail.com",
+                 Username : "username",
+                 Password : "password",
+                 To : 'them@website.com',
+                 From : document.getElementById("email").value,
+                 Subject : "New Question",
+                 Body : "Name: " + document.getElementById("Name").value
+                       + "<br> Email: " + document.getElementById("Email").value
+                       + "<br> Message: " + document.getElementById("Message").value
+
+                 }).then(
+                   message => alert("Message Sent Succesfully")
+                 );
+         }
+    </script>
+
+
+
+    
+   
+     
+     
+  </body>
+
+    
+</html>
